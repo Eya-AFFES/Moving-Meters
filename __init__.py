@@ -1,6 +1,7 @@
 # Copyright 2016 Mycroft AI Inc.
 
-import re
+import subprocess
+#import re
 from os.path import dirname, join
 
 from adapt.intent import IntentBuilder
@@ -19,7 +20,7 @@ class SpeakmeterSkill(MycroftSkill):
         super(SpeakmeterSkill, self).__init__(name="SpeakmeterSkill")
         
     def initialize(self):
-        MV_F_intent = IntentBuilder("MVFIntent").require("Speak").optionally("distanceWord").build()
+        MV_F_intent = IntentBuilder("MVFIntent").require("moveKeyword").optionally("Mydistance").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
     
     def handle_MV_F_intent(self, message):
