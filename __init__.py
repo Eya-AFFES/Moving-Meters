@@ -19,7 +19,7 @@ class SpeakmeterSkill(MycroftSkill):
         super(SpeakmeterSkill, self).__init__(name="SpeakmeterSkill")
         
     def initialize(self):
-        MV_F_intent = IntentBuilder("MVFIntent").require("MVFKeyword").optionally("distanceWord").build()
+        MV_F_intent = IntentBuilder("MVFIntent").require("Speak").optionally("distanceWord").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
     
     def handle_MV_F_intent(self, message):
