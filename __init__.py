@@ -19,24 +19,24 @@ class SpeakmeterSkill(MycroftSkill):
         super(SpeakmeterSkill, self).__init__(name="SpeakmeterSkill")
         
     def initialize(self):
-        MV_F_intent = IntentBuilder("MVFIntent").require("MVFKeyword").optionally("words").build()
+        MV_F_intent = IntentBuilder("MVFIntent").require("MVFKeyword").optionally("distanceWord").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
     
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
-        msg="MVF"
+        msg="MVF"+message.data.get('distanceWord')+"\n"
         ser00.write(bytes(msg, 'utf-8'))    
-    
-    def speak_back(self, message):
         """
+    def speak_back(self, message):
+    
             Repeat the utterance back to the user.
 
-        """
         # Remove everything up to the speak keyword and repeat that
         utterance = message.data.get('utterance')
         repeat = re.sub('^.*?' + message.data['Speak'], '', utterance)
         self.speak(repeat.strip())
 
+        """
     def stop(self):
         pass
 
