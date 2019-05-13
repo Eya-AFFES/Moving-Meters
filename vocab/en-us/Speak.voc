@@ -1,5 +1,5 @@
-Move forward (?P<for . meter>.*)
-Forward for (?P<for . meter>.*)
-Go forward for (?P<for . meter>.*)
-Go ahead (?P<for . meter>.*)
-Continue forward (?P<for . meter>.*)
+Move forward 
+Forward for 
+Go forward for 
+Go ahead 
+Continue forward 
