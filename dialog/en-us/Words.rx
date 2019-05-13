@@ -1,3 +1,5 @@
-say (?P<Words>.*)
-speak (?P<Words>.*)
-repeat (?P<Words>.*)
+Move forward (?P<Words>.*)
+Forward (?P<Words>.*)
+Go forward (?P<Words>.*)
+Go ahead (?P<Words>.*)
+Continue forward (?P<Words>.*)
