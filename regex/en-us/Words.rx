@@ -1,3 +1,1 @@
-say (?P<Words>.*)
-speak (?P<Words>.*)
-repeat (?P<Words>.*)
+(Move forward|go for|Move forward for|Move for) (?P<Mydistance>.*)
