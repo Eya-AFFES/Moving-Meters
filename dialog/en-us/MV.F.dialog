@@ -1,1 +1,4 @@
-(Moving forward |I am moving forward | Watch me moving forward |The car is moving forward) for {msg}
+Moving forward for {{msg}}
+I am moving forward for {{msg}}  
+Watch me moving forward for {{msg}}
+The car is moving forward for {{msg}}
