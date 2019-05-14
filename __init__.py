@@ -45,7 +45,8 @@ class SpeakmeterSkill(MycroftSkill):
           msg+="8\n" 
         elif (T[16] in dist) or (T[17] in dist):
           msg+="9\n" 
-        else msg="MVF"
+        else 
+          msg="MVF"
         ser00.write(bytes(msg, 'utf-8'))  
  
     def stop(self):
