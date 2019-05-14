@@ -22,7 +22,7 @@ class SpeakmeterSkill(MycroftSkill):
         #MV_F_intent = IntentBuilder("MVFIntent").require("moveKeyword").require("Mydistance").build()
         MV_F_intent = IntentBuilder("MVFIntent").require("moveKeyword").require("Mydistance").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
-    def convert_meter(Mydistance)
+   ''' def convert_meter(Mydistance)
         msg="MVF"
         T = ("1","one","2","two","3","three","4","four","5","five","6","six","7","seven","8","eight","9","nine")
         if (T[0] or T[1]) in Mydistance:
@@ -43,11 +43,33 @@ class SpeakmeterSkill(MycroftSkill):
           msg+="8\n" 
         elif (T[16] or T[17]) in Mydistance:
           msg+="9\n" 
-    return msg      
+    return msg '''     
       
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
-        ser00.write(bytes(convert_meter(str(message.data.get("Mydistance")), 'utf-8'))  
+        dist=str(message.data.get("Mydistance"))
+        msg="MVF"
+        T = ("1","one","2","two","3","three","4","four","5","five","6","six","7","seven","8","eight","9","nine")
+        if (T[0] or T[1]) in dist:
+          msg+="1\n"
+        elif (T[2] or T[3]) in dist:
+          msg+="2\n"
+        elif (T[4] or T[5]) in dist:
+          msg+="3\n"
+        elif (T[6] or T[7]) in dist:
+          msg+="4\n"  
+        elif (T[8] or T[9]) in dist:
+          msg+="5\n"
+        elif (T[10] or T[11]) in dist:
+          msg+="6\n"  
+        elif (T[12] or T[13]) in dist:
+          msg+="7\n" 
+        elif (T[14] or T[15]) in dist:
+          msg+="8\n" 
+        elif (T[16] or T[17]) in dist:
+          msg+="9\n" 
+        ser00.write(bytes(msg, 'utf-8'))  
+        
         #msg="MVF"+str(message.data.get("Mydistance"))+"\n"
         #msg=str(message.data.get("Mydistance"))+"\n"
         #if Mydistance=="one meter"
