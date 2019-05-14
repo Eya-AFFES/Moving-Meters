@@ -74,7 +74,7 @@ class SpeakmeterSkill(MycroftSkill):
           msg="9" 
         else: 
           msg="0"  
-        self.speak_dialog("MV.F", data={'eya':msg})
+        self.speak_dialog("MV.F", data={'eya':msg, 'meters':meters})
         ser00.write(bytes("MF"+msg+"\n", 'utf-8'))
 
     def stop(self):
