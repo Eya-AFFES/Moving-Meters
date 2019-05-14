@@ -47,26 +47,9 @@ class SpeakmeterSkill(MycroftSkill):
           msg+="9\n" 
         else msg="MVF"
         ser00.write(bytes(msg, 'utf-8'))  
-     """   
-        #msg="MVF"+str(message.data.get("Mydistance"))+"\n"
-        #msg=str(message.data.get("Mydistance"))+"\n"
-        #if Mydistance=="one meter"
-        #msg="MVF"+"\n"
-        #ser00.write(bytes(msg, 'utf-8'))    
-        """
-   """ def speak_back(self, message):
-    
-            Repeat the utterance back to the user.
-
-        # Remove everything up to the speak keyword and repeat that
-        utterance = message.data.get('utterance')
-        repeat = re.sub('^.*?' + message.data['Speak'], '', utterance)
-        self.speak(repeat.strip())
-
-        """
+ 
     def stop(self):
         pass
  
-
 def create_skill():
     return SpeakmeterSkill()
