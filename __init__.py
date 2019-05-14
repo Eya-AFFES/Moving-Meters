@@ -24,7 +24,9 @@ class SpeakmeterSkill(MycroftSkill):
     
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
-        msg="MVF"+str(message.data.get("Mydistance"))+"\n"
+        #msg="MVF"+str(message.data.get("Mydistance"))+"\n"
+        msg=str(message.data.get("Mydistance"))
+        #if Mydistance=="one meter"
         #msg="MVF"+"\n"
         ser00.write(bytes(msg, 'utf-8'))    
         """
