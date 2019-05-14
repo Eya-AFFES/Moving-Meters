@@ -20,7 +20,7 @@ class SpeakmeterSkill(MycroftSkill):
         
     def initialize(self):
         #MV_F_intent = IntentBuilder("MVFIntent").require("moveKeyword").require("Mydistance").build()
-        MV_F_intent = IntentBuilder("MVFIntent").require("moveKeyword").require("Mydistance").require("meterKeyword").build()
+        MV_F_intent = IntentBuilder("MVFIntent").require("moveKeyword").require("Mydistance").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
     
     def handle_MV_F_intent(self, message):
