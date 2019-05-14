@@ -66,7 +66,7 @@ class SpeakmeterSkill(MycroftSkill):
         """
     def stop(self):
         pass
-
+ 
 
 def create_skill():
     return SpeakmeterSkill()
