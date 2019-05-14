@@ -1,7 +1,6 @@
 # Copyright 2016 Mycroft AI Inc.
 
 import subprocess
-#import re
 from os.path import dirname, join
 
 from adapt.intent import IntentBuilder
@@ -25,7 +24,7 @@ class SpeakmeterSkill(MycroftSkill):
     
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
-        msg="MVF"+message.data.get("Mydistance")+"\n"
+        msg="MVF"+str(message.data.get("Mydistance"))+"\n"
         #msg="MVF"+"\n"
         ser00.write(bytes(msg, 'utf-8'))    
         """
