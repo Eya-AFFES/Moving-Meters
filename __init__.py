@@ -54,7 +54,7 @@ class SpeakmeterSkill(MycroftSkill):
         #msg="MVF"+"\n"
         #ser00.write(bytes(msg, 'utf-8'))    
         """
-    def speak_back(self, message):
+   """ def speak_back(self, message):
     
             Repeat the utterance back to the user.
 
