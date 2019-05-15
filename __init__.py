@@ -17,8 +17,9 @@ class SpeakmeterSkill(MycroftSkill):
     def initialize(self):
         MV_F_intent = IntentBuilder("MVFIntent").require("FKeyword").require("MydistanceF").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
-        """MV_B_intent = IntentBuilder("MVBIntent").require("BKeyword").require("MydistanceB").build()
-        self.register_intent(MV_B_intent ,self.handle_MV_B_intent)"""
+        
+        MV_B_intent = IntentBuilder("MVBIntent").require("BKeyword").require("MydistanceB").build()
+        self.register_intent(MV_B_intent ,self.handle_MV_B_intent)
     
     def handle_MV_F_intent(self, message):
         try:
@@ -51,7 +52,7 @@ class SpeakmeterSkill(MycroftSkill):
             pass
         except:
             self.speak_dialog("error")
-    """
+   
     def handle_MV_B_intent(self, message):
             try:
                 meters="meters"
@@ -84,7 +85,6 @@ class SpeakmeterSkill(MycroftSkill):
             except:
                 self.speak_dialog("error")
 
-"""
     def stop(self):
         pass
  
