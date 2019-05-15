@@ -15,15 +15,15 @@ class SpeakmeterSkill(MycroftSkill):
         super(SpeakmeterSkill, self).__init__(name="SpeakmeterSkill")
         
     def initialize(self):
-        MV_F_intent = IntentBuilder("MVFIntent").require("FKeyword").require("Mydistance").build()
+        MV_F_intent = IntentBuilder("MVFIntent").require("FKeyword").require("MydistanceF").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
-        MV_B_intent = IntentBuilder("MVBIntent").require("BKeyword").require("Mydistance").build()
+        MV_B_intent = IntentBuilder("MVBIntent").require("BKeyword").require("MydistanceB").build()
         self.register_intent(MV_B_intent ,self.handle_MV_B_intent)
     
     def handle_MV_F_intent(self, message):
             try:
                 meters="meters"
-                dist=str(message.data.get("Mydistance"))
+                dist=str(message.data.get("MydistanceF"))
                 T = ("1","one","2","two","3","three","4","four","5","five","6","six","7","seven","8","eight","9","nine")
                 if (T[0] in dist) or (T[1] in dist):
                     msg="1"
@@ -55,7 +55,7 @@ class SpeakmeterSkill(MycroftSkill):
     def handle_MV_B_intent(self, message):
             try:
                 meters="meters"
-                dist=str(message.data.get("Mydistance"))
+                dist=str(message.data.get("MydistanceB"))
                 T = ("1","one","2","two","3","three","4","four","5","five","6","six","7","seven","8","eight","9","nine")
                 if (T[0] in dist) or (T[1] in dist):
                     msg="1"
