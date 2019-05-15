@@ -51,7 +51,7 @@ class SpeakmeterSkill(MycroftSkill):
                 pass
             except:
                 self.speak_dialog("error")
-    
+    """
     def handle_MV_B_intent(self, message):
             try:
                 meters="meters"
@@ -84,7 +84,7 @@ class SpeakmeterSkill(MycroftSkill):
             except:
                 self.speak_dialog("error")
 
-
+"""
     def stop(self):
         pass
  
